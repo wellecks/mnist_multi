@@ -4,7 +4,7 @@ This repo contains a script to generate MNIST Multi datasets, e.g. as used in [S
 
 Each dataset contains images with a possibly variable number of digits that can vary in size and can have clutter. Each image has a multiset of label and bounding box annotations. 
 
-Dataset variations can be created for multiset, set, and list based prediction, with varying levels of difficulty. This class of datasets can also be useful for evaluating generalization to different sequence lengths.
+Dataset variations can be created for multiset, set, and sequence prediction, with varying levels of difficulty. This class of datasets can also be useful for evaluating generalization to different sequence lengths.
 
 ## Examples
 #### 4 digits, 20-50px digit size, with clutter
@@ -39,4 +39,4 @@ Many other variations are possible (please see the available flags with `python 
 
 ## Loading
 
-`load.py` contains an example `PyTorch` dataset loader.
+`load.py` contains a function to load MNIST Multi into a `PyTorch` `Dataset`. Labels can be ordered randomly, or used for sequence prediction by ordering the labels spatially, by object area, or according to a fixed random ordering.
