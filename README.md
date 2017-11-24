@@ -22,11 +22,11 @@ python mnist_multi.py --min-digits 1 --max-digits 4 \
                       --tag min20_max50_1_4 --output-dir output/
 ```
 
-#### 10 digits, 10px digit size, with clutter
+#### 10 digits, 20px digit size, with clutter
 ```bash
 python mnist_multi.py --min-digits 10 --max-digits 10 \
-                      --min-digit-size 10 --max-digit-size 10 \
-                      --tag min10_max10_10 --output-dir output/
+                      --min-digit-size 20 --max-digit-size 20 \
+                      --tag min20_max20_10 --output-dir output/
 ```
 
 Many other variations are possible (please see the available flags with `python mnist_multi.py -h`), including:
