@@ -13,6 +13,7 @@ python mnist_multi.py --min-digits 4 --max-digits 4 \
                       --min-digit-size 20 --max-digit-size 50 \
                       --tag min20_max50_4 --output-dir output/
 ```
+<img src="examples/4.png" width="250">
 
 #### 1-4 digits, 20-50px digit size, without clutter
 ```bash
