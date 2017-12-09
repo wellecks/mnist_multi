@@ -31,7 +31,6 @@ def load_mnist_multi(dataset_path, labels_path, bbox_path, max_objects, size=700
                                            key=lambda x: fixed_random_order.index(x)))
             bbox_np[i] = np.array(sorted(list(bbox_np[i]),
                                          key=lambda x: fixed_random_order.index(x)))
-        pass
     elif label_order == 'area':
         for i in xrange(labels_np.shape[0]):
             areas = [np.prod(bbox[2:]-bbox[:2]) for bbox in bbox_np[i]]
@@ -39,7 +38,6 @@ def load_mnist_multi(dataset_path, labels_path, bbox_path, max_objects, size=700
             sorted_triples = sorted(triples, key=lambda x: x[2], reverse=True)
             labels_np[i] = np.array([x[0] for x in sorted_triples])
             bbox_np[i] = np.array([x[1] for x in sorted_triples])
-        pass
     elif label_order == 'random':
         for i in xrange(labels_np.shape[0]):
             idxs = np.random.permutation(len(labels_np[i]))
@@ -115,5 +113,4 @@ if __name__ == '__main__':
                                     'output/mnist_custom_100_min20_max50_1_4_labels.npz',
                                     'output/mnist_custom_100_min20_max50_1_4_bbox.npz',
                                     max_objects=4,
-                                    label_order='fixed_random',
-                                    size=100)
+                                    label_order='fixed_random')

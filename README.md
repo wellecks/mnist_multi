@@ -39,4 +39,4 @@ Many other variations are possible (please see the available flags with `python 
 
 ## Loading
 
-`load.py` contains a function to load MNIST Multi into a `PyTorch` `Dataset`. Labels can be ordered randomly, or used for sequence prediction by ordering the labels spatially, by object area, or according to a fixed random ordering.
+`util.py` contains a function to load MNIST Multi into a `PyTorch` `Dataset`. Labels can be ordered randomly, or used for sequence prediction by ordering the labels spatially, by object area, or according to a fixed random ordering.
