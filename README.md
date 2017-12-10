@@ -39,4 +39,8 @@ Many other variations are possible (please see the available flags with `python 
 
 ## Loading
 
-`util.py` contains a function to load MNIST Multi into a `PyTorch` `Dataset`. Labels can be ordered randomly, or used for sequence prediction by ordering the labels spatially, by object area, or according to a fixed random ordering.
+`util.py` contains a function to load MNIST Multi into a `PyTorch` `Dataset`. 
+
+Using the `label_order` flag, labels can be ordered randomly, or used for sequence prediction by ordering the labels spatially, by object area, or according to a fixed random ordering. 
+
+To evaluate invariance to label ordering, use `randomize_dataset=True`, which will re-randomize the label order every time a minibatch is drawn.
