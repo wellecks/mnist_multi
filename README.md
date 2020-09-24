@@ -6,8 +6,6 @@ Each dataset contains images with a possibly variable number of digits that can 
 
 Dataset variations can be created for multiset, set, and sequence prediction, with varying levels of difficulty. This class of datasets can also be useful for evaluating generalization to different sequence lengths.
 
-For Python 3, use the `python3` branch.
-
 ## Examples
 #### 4 digits, 20-50px digit size, with clutter
 ```bash
