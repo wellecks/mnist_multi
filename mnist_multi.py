@@ -3,12 +3,12 @@
 python mnist_multi.py --min-digits 1 --max-digits 4 --min-digit-size 20 --max-digit-size 50 --tag my_mnist
 """
 import argparse
-import cPickle
+import _pickle as cPickle
 import cv2
 import errno
 import gzip
 import os
-import urllib2
+from urllib.request import urlopen
 from pprint import pprint
 from progressbar import ProgressBar
 from scipy import ndimage
@@ -55,12 +55,12 @@ def load_mnist(path, include_validation_set=False):
 
         print('Downloading mnist to %s' % (file_path))
         MNIST_URL = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
-        gz = urllib2.urlopen(MNIST_URL)
+        gz = urlopen(MNIST_URL)
         with open(os.path.join(path, 'mnist.pkl.gz'), 'wb') as f:
             f.write(gz.read())
 
     with gzip.open(os.path.join(path, 'mnist.pkl.gz')) as f:
-        train, valid, test = cPickle.load(f)
+        train, valid, test = cPickle.load(f, encoding='iso-8859-1')
 
     if include_validation_set:
         return train, valid, test
@@ -74,7 +74,7 @@ def numbered_partitions(sizes):
     i = 0
     for size in sizes:
         data = []
-        for _ in xrange(size):
+        for _ in range(size):
             data.append(i)
             i += 1
         partitions.append(data)
@@ -145,7 +145,7 @@ def place_digits(canvas, digits):
 def generate_clutter(num_clutter, clutter_width, examples):
     examples = examples[np.random.choice(examples.shape[0], size=num_clutter)]
     clutter = np.zeros((num_clutter, clutter_width, clutter_width))
-    for i in xrange(num_clutter):
+    for i in range(num_clutter):
         xstart, ystart = np.random.choice(examples[i].shape[0]-clutter_width+1, size=2)
         clutter[i] = examples[i, xstart:xstart+clutter_width, ystart:ystart+clutter_width]
     return clutter
@@ -174,7 +174,7 @@ if __name__ == '__main__':
         idxs = np.random.choice(input_dataset.shape[0], size=num_digits.sum(), replace=True)
 
     output_labels = np.array([[input_labels[idxs[j]] for j in partitions[i]]
-                              for i in xrange(opts['dataset_size'])])
+                              for i in range(opts['dataset_size'])])
     output_dataset = np.zeros((opts['dataset_size'], opts['img_width'], opts['img_width']))
     output_bbox = []
 
