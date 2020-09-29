@@ -1,6 +1,6 @@
-# MNIST Multi
+# MNIST Multiset
 
-This repo contains a script to generate MNIST Multi datasets, e.g. as used in [Saliency-based Sequential Image Attention with Multiset Prediction](https://arxiv.org/abs/1711.05165) and [Loss Functions for Multiset Prediction](https://arxiv.org/abs/1711.05246).
+This repo contains a script to generate MNIST Multiset datasets, e.g. as used in [Saliency-based Sequential Image Attention with Multiset Prediction](https://arxiv.org/abs/1711.05165) and [Loss Functions for Multiset Prediction](https://arxiv.org/abs/1711.05246).
 
 Each dataset contains images with a possibly variable number of digits that can vary in size and can have clutter. Each image has a multiset of label and bounding box annotations. 
 
